@@ -1,12 +1,7 @@
-FROM ubuntu:trusty
+FROM alpine:3.2
 
-ENV LANG en_US.UTF-8
-RUN locale-gen $LANG
-
-RUN apt-get update -q && \
-    apt-get install -qy git-core python2.7
-
-RUN git clone https://github.com/rembo10/headphones.git /headphones
+RUN apk --update add git python && \
+    git clone --depth=1 https://github.com/rembo10/headphones.git /headphones
 
 ADD start.sh /start.sh
 
