@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 
 RUN apk --update add git python && \
     git clone --depth=1 https://github.com/rembo10/headphones.git /headphones
